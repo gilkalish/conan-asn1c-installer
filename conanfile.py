@@ -9,7 +9,7 @@ class Asn1cInstallerConan(NxConanFile):
     license = "OSI-approved BSD 3-clause"
     url = "http://github.com/hoxnox/conan-asn1c-installer"
     settings = "os_build", "arch_build"
-    build_policy = "missing"
+    version = "0.9.28"
 
     def do_source(self):
         self.retrieve("8007440b647ef2dd9fb73d931c33ac11764e6afb2437dbe638bb4e5fc82386b9",
