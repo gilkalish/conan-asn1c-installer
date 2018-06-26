@@ -23,13 +23,13 @@ class Asn1cInstallerConan(NxConanFile):
         build_dir = "{staging_dir}/src".format(staging_dir=self.staging_dir)
         tools.untargz("asn1c-{v}.tar.gz".format(v=self.version), build_dir)
         env_build = AutoToolsBuildEnvironment(self)
-
         with tools.environment_append(env_build.vars):
-            self.run("cd {build_dir}/asn1c-{v} && ./configure --prefix=\"{staging}\"".format(
+            self.run("cd {build_dir}/asn1c-{v} && ./configure --prefix={prefix}".format(
                          v = self.version,
                          build_dir=build_dir,
-                         staging=self.staging_dir))
-            self.run("cd {build_dir}/asn1c-{v} && make install".format(v = self.version, build_dir = build_dir))
+                         prefix=self.package_folder))
+            self.run("cd {build_dir}/asn1c-{v} && PREFIX={staging} make install".format(v =
+                self.version, build_dir = build_dir, staging = self.staging_dir))
 
     def do_package(self):
         self.copy(pattern="bin/*", dst="", src=self.staging_dir)
