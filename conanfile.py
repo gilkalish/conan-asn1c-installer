@@ -4,7 +4,7 @@ from nxtools import NxConanFile
 
 
 class Asn1cInstallerConan(NxConanFile):
-    name = "asn1c-installer"
+    name = "asn1c"
     description = "provide asn1c compiler"
     license = "OSI-approved BSD 3-clause"
     url = "http://github.com/hoxnox/conan-asn1c-installer"
