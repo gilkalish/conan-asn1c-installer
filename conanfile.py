@@ -8,7 +8,7 @@ class Asn1cInstallerConan(NxConanFile):
     description = "provide asn1c compiler"
     license = "OSI-approved BSD 3-clause"
     url = "http://github.com/hoxnox/conan-asn1c-installer"
-    settings = "os_build", "arch_build"
+    settings = "os", "arch", "compiler", "build_type"
     version = "0.9.28"
 
     def do_source(self):
